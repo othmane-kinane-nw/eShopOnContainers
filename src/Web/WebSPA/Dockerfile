@@ -16,7 +16,7 @@ RUN npm run build:prod
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS prepare-restore-files
 ENV PATH="${PATH}:/root/.dotnet/tools"
-RUN dotnet tool install --global --no-cache dotnet-subset --version 0.3.0
+RUN dotnet tool install --global --no-cache dotnet-subset --version 0.3.1
 WORKDIR /src
 COPY . .
 RUN dotnet subset restore "eShopOnContainers-ServicesAndWebApps.sln" --root-directory /src --output /src/restore_subset/
